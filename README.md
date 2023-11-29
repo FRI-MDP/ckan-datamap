@@ -6,7 +6,7 @@ Current visualization is based on DCAT and other ontologies, applied to the Slov
 
 The project is loosely coupled with the CKAN project. The component is directly integrated into CKAN Web pages (CKAN landing page and CKAN resource *webview plugin*). Similarly could be integrated into an arbitrary Web page.
 
-DEMO: [https://fri-mdp.github.io/ckan-datamap](https://fri-mdp.github.io/ckan-datamap)
+DEMO: [https://fri-mdp.github.io/ckan-datamap/](https://fri-mdp.github.io/ckan-datamap/)
 
 Some examples of Datamap visualizations:
 
