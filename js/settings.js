@@ -59,10 +59,28 @@ let settings = {
   ],
   displaySchema: true,
   instanceGraph:
-    "http://onto.mju.gov.si/pz/dataset/erar-evidenca-davcnih-dolznikov-in-nepredlagateljev-davcnih-obracunov",
+    //"http://onto.mju.gov.si/pz/dataset/erar-evidenca-davcnih-dolznikov-in-nepredlagateljev-davcnih-obracunov",
+    "",
   nMaxChildrenForBlankInstanceLabel: 25,
 };
 settings.hideConcepts = settings.defaultHideConcepts.slice();
+
+const readParams = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  let schema = urlParams.get("schema");
+  let instanceGraph = urlParams.get("instanceGraph");
+  let sparqlEndpoint = urlParams.get("sparqlEndpoint");
+  if (sparqlEndpoint != undefined) {
+    settings.fusekiEndpoint.remote = sparqlEndpoint;
+    settings.fusekiEndpoint.selected = "remote";
+  }
+  if (schema != undefined) {
+    if (schema == "true") settings.displaySchema = true;
+    else if (schema == "false") settings.displaySchema = false;
+  }
+  if (instanceGraph != undefined) settings.instanceGraph = instanceGraph;
+};
+readParams();
 
 const translations = {
   About: {
